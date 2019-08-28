@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="gray">
+<meta name="description" content="Provibloc's dedicated newbie corporation">
+<title>Providence Gunslingers</title>
+<link rel="icon" href="https://imageserver.eveonline.com/Corporation/98486047_128.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="index.css">
+<div id="bg"></div>
+<div id="panels">
+	<div id="panel_init" class="panelHidden">
+		<div class="panel-content">
+			<h1>Providence Gunslingers</h1>
+			<img src="https://imageserver.eveonline.com/Corporation/98486047_128.png" alt="Providence Gunslingers logo"
+				title="We could use a better logo">
+			<p>Provibloc's dedicated newbie corporation</p>
+			<div class="navButtons">
+				<a onclick="applyClasses({panel_about:'panelActive',panel_init:'panelUp'})">Find out more</a>
+			</div>
+		</div>
+	</div>
+	<div id="panel_about" class="panelDown">
+		<div class="panel-content">
+			<h2>What are we about?</h2>
+			<p>We're a really cool NRDS corp based in Providence dedicated to helping Alpha clones.</p>
+			<p>Seriously, we're pure awesomeness.</p>
+			<div class="navButtons">
+				<a onclick="applyClasses({panel_people:'panelActive',panel_about:'panelRight'})">Organizers</a>
+				<a onclick="applyClasses({panel_signup:'panelActive',panel_about:'panelUp'})">Sign up</a>
+				<a onclick="applyClasses({panel_faq:'panelActive',panel_about:'panelLeft'})">FAQ</a>
+			</div>
+		</div>
+	</div>
+	<div id="panel_people" class="panelLeft">
+		<div class="panel-content">
+			<h2>Organizers</h2>
+			<p>These are the people investing their time and resources into mentoring you ungrateful Alphas.</p>
+			<p><em>*list of people goes here*</em></p>
+			<div class="navButtons">
+				<a onclick="applyClasses({panel_about:'panelActive',panel_people:'panelLeft'});">About us</a>
+				<a onclick="applyClasses({panel_signup:'panelActive',panel_people:'panelUp'});">Sign up</a>
+				<a
+					onclick="applyClasses({panel_faq:'panelActive',panel_people:'panelLeft',panel_about:'panelLeft'});">FAQ</a>
+			</div>
+		</div>
+	</div>
+	<div id="panel_faq" class="panelRight">
+		<div class="panel-content">
+			<h2>Frequently asked questions</h2>
+			<p>What is NRDS?</p>
+			<p>You only shoot people that are red, but everyone is red so it really doesn't matter.</p>
+			<div class="navButtons">
+				<a
+					onclick="applyClasses({panel_people:'panelActive',panel_faq:'panelRight',panel_about:'panelRight'});">Organizers</a>
+				<a onclick="applyClasses({panel_signup:'panelActive',panel_faq:'panelUp'});">Sign up</a>
+				<a onclick="applyClasses({panel_about:'panelActive',panel_faq:'panelRight'});">About us</a>
+			</div>
+		</div>
+	</div>
+	<div id="panel_signup" class="panelDown">
+		<div class="panel-content">
+			<h2>Signing up</h2>
+			<p>Click below to log in with your EVE Online account.</p>
+			<p>This will allow us to keep track of your progress by watching your skill levels and activity.</p>
+			<img src="https://web.ccpgamescdn.com/eveonlineassets/developers/eve-sso-login-white-large.png"
+				alt="EVE Online login">
+			<div class="navButtons">
+				<a onclick="applyClasses({panel_signup:'panelUp',panel_done:'panelActive'})">Continue</a>
+			</div>
+		</div>
+	</div>
+	<div id="panel_done" class="panelDown">
+		<div class="panel-content">
+			<h2>That's it!</h2>
+			<p>If you haven't already, apply to the corporation <strong>Providence Gunslingers</strong> in-game.
+				Your application will be accepted as soon as possible, and once it is accepted, you'll be able to
+				access all parts of the members area!</p>
+			<p>Make sure to include your favorite knock-knock joke in the application text!</p>
+			<div class="navButtons">
+				<a onclick="alert('Slow down, I\'m not there yet!')">Proceed to members area</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function applyClasses(x) {
+		for (let n in x) {
+			document.getElementById(n).className = x[n];
+		}
+	}
+
+	setTimeout(applyClasses, 50, {panel_init: 'panelActive'});
+</script>

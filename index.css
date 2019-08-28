@@ -1,0 +1,90 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: rgba(0, 0, 0, .8);
+    text-align: center;
+    font-size: 1.2em;
+}
+
+body>div, #panels>div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center
+}
+
+.navButtons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center
+}
+
+.navButtons>a {
+    flex: 1 0 6em;
+    margin: .5em;
+}
+
+#bg {
+    background: url("bg.jpg") center/cover;
+    filter: blur(0.5rem);
+    transform: scale(1.1);
+}
+
+#panels {
+    perspective: 100vmin;
+}
+
+#panels>div {
+    transition: all 0.3s
+}
+
+#panels .panel-content {
+    background: rgba(255, 255, 255, 0.4);
+    border: gray 1px solid;
+    padding: 1em;
+    max-width: 70rem;
+    overflow-y: auto;
+}
+
+.panelHidden {
+    transform: scale(0);
+}
+
+.panelActive {
+    transform: scale(1);
+}
+
+.panelUp {
+    transform: scale(0.5) translateY(-200vh) rotateX(16deg);
+}
+
+.panelDown {
+    transform: scale(0.5) translateY(200vh) rotateX(-16deg);
+}
+
+.panelLeft {
+    transform: scale(0.5) translateX(-200vw) rotateY(-16deg);
+}
+
+.panelRight {
+    transform: scale(0.5) translateX(200vw) rotateY(16deg);
+}
+
+a {
+    padding: .4em;
+    border-radius: .2em;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(0, 0, 0, .1);
+    color: white;
+    transition: all .2s;
+}
+
+a:hover, a:active {
+    background: rgba(0, 0, 0, .3);
+}
